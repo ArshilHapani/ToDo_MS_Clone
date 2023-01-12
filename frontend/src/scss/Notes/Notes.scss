@@ -1,0 +1,15 @@
+@import '../utils/mixins';
+@import '../utils/variables';
+.notes-component{
+    border-radius: 15px;
+    height: 100vh;
+    width: 80vw;
+    background-image:url($Image-First);
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    @include flex-container(center);
+}

@@ -1,0 +1,16 @@
+.notes-component {
+  border-radius: 15px;
+  height: 100vh;
+  width: 80vw;
+  background-image: url("../../images/w4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}/*# sourceMappingURL=Notes.css.map */

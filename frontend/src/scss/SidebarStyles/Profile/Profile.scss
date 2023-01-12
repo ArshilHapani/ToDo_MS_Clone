@@ -1,0 +1,24 @@
+@import "../../utils/mixins";
+.profile-container {
+    margin-top: 3vh;
+    color: #fff;
+    flex-direction: row;
+    @include flex-container(center, row, flex-start);
+    div {
+        h4,
+        h6 {
+            margin-left: 1vw;
+        }
+    }
+    img {
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        height: 7vh;
+        width: 7vh;
+        margin-left: 1.5vw;
+        margin-top: 1vh;
+    }
+}

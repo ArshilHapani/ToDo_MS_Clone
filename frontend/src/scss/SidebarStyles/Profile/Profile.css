@@ -1,0 +1,24 @@
+.profile-container {
+  margin-top: 3vh;
+  color: #fff;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.profile-container div h4,
+.profile-container div h6 {
+  margin-left: 1vw;
+}
+.profile-container img {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  height: 7vh;
+  width: 7vh;
+  margin-left: 1.5vw;
+  margin-top: 1vh;
+}/*# sourceMappingURL=Profile.css.map */

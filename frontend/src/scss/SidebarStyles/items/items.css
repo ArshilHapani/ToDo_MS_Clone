@@ -1,0 +1,91 @@
+.side-bar-items-container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 2vh;
+  color: aliceblue;
+}
+.side-bar-items-container .side-items {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 1vh 2vh 2vh 2.3vh;
+  margin-bottom: 0.4vh;
+  width: 100%;
+}
+.side-bar-items-container .side-items .icons {
+  padding-right: 1.5vw;
+  align-self: center;
+  display: flex;
+  font-size: 1.1rem;
+  color: #8795a0;
+}
+.side-bar-items-container .side-items .title {
+  font-size: 0.9rem;
+}
+.side-bar-items-container .side-items:hover {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: #313131;
+  width: 100%;
+  cursor: default;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.side-bar-items-container .side-items.active {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: #313131;
+  width: 100%;
+  cursor: default;
+}
+.side-bar-items-container .horizontal-rule {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.side-bar-items-container .horizontal-rule span {
+  margin-top: 0.4vh;
+  width: 95%;
+  height: 0.5px;
+  background-color: #535a5f;
+}
+
+.bottom-item-container {
+  outline: 1px solid lime;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  padding-left: 1vw;
+}
+.bottom-item-container .side-items {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.bottom-item-container .side-items .add-icon {
+  font-size: 1.57rem;
+}
+.bottom-item-container .side-items .square-icon {
+  position: inherit;
+  right: -10vw;
+  font-size: 1.34rem;
+}
+.bottom-item-container .side-items .text-list {
+  padding-left: 1vw;
+  font-size: 0.9rem;
+}/*# sourceMappingURL=items.css.map */

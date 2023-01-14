@@ -9,11 +9,14 @@ const Bottom_item = () => {
         <span className="add-icon">
           <MdOutlineAdd />
         </span>
-        <div className="text-list">New list</div>
-        <div className="square-icon">
-          <HiOutlineSquaresPlus />
-        </div>
+        <div className="text-list">New list</div>        
       </div>
+
+      <div className="square-icon-container">
+          <div className="square-icon">
+            <HiOutlineSquaresPlus />
+          </div>
+        </div>
     </div>
   );
 };

@@ -51,26 +51,47 @@
   }
 }
 .bottom-item-container {
-  outline: 1px solid lime;
   color: aliceblue;
   @include flex-container(center, row, center);
-  position: relative;
-  padding-left: 1vw;
+  padding-left: 0.6vw; 
+  width: 100%;
   .side-items {
     display: flex;
-    width: 100%;
-    align-items: center;    
+    width: 90%;
+    align-items: center;
     .add-icon {
       font-size: 1.57rem;
-    }
-    .square-icon {
-      position: inherit;
-      right: -10vw;
-      font-size: 1.34rem;
     }
     .text-list {
       padding-left: 1vw;
       font-size: 0.9rem;
     }
+  }
+  .side-items:hover {
+    cursor: default;
+    background-color: #313131;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+  }
+
+
+  .square-icon-container{
+
+    .square-icon {
+      position: relative;
+      right: 20%;
+      font-size: 1.34rem;
+    }
+    .square-icon:hover{
+      background-color: #313131;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+  }
   }
 }

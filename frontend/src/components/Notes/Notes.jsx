@@ -3,7 +3,7 @@ import '../../scss/Notes/Notes.css'
 const Notes = () => {
   return (
     <div className='notes-component'>
-      <h1>Check Notes 
+      <h1>To-Do...
           <p>Paragraph Element</p>
         </h1>      
     </div>

@@ -63,29 +63,45 @@
 }
 
 .bottom-item-container {
-  outline: 1px solid lime;
   color: aliceblue;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  position: relative;
-  padding-left: 1vw;
+  padding-left: 0.6vw;
+  width: 100%;
 }
 .bottom-item-container .side-items {
   display: flex;
-  width: 100%;
+  width: 90%;
   align-items: center;
 }
 .bottom-item-container .side-items .add-icon {
   font-size: 1.57rem;
 }
-.bottom-item-container .side-items .square-icon {
-  position: inherit;
-  right: -10vw;
-  font-size: 1.34rem;
-}
 .bottom-item-container .side-items .text-list {
   padding-left: 1vw;
   font-size: 0.9rem;
+}
+.bottom-item-container .side-items:hover {
+  cursor: default;
+  background-color: #313131;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+.bottom-item-container .square-icon-container .square-icon {
+  position: relative;
+  right: 20%;
+  font-size: 1.34rem;
+}
+.bottom-item-container .square-icon-container .square-icon:hover {
+  background-color: #313131;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
 }/*# sourceMappingURL=items.css.map */

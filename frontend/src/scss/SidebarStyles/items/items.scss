@@ -1,0 +1,76 @@
+@import "../../utils/mixins";
+@import "../../utils/variables";
+
+.side-bar-items-container {
+  @include flex-container(flex-start, column, flex-start);
+  padding-top: 2vh;
+  color: aliceblue;
+  .side-items {
+    @include flex-container(center, row, flex-start);
+    padding: 1vh 2vh 2vh 2.3vh;
+    margin-bottom: 0.4vh;
+    width: 100%;
+    .icons {
+      padding-right: 1.5vw;
+      align-self: center;
+      display: flex;
+      font-size: 1.1rem;
+      color: #8795a0;
+    }
+    .title {
+      font-size: 0.9rem;
+    }
+  }
+  .side-items:hover {
+    @include flex-container(center, row, flex-start);
+    background-color: #313131;
+    width: 100%;
+    cursor: default;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+  }
+  .side-items.active {
+    @include flex-container(center, row, flex-start);
+    background-color: #313131;
+    width: 100%;
+    cursor: default;
+  }
+
+  .horizontal-rule {
+    @include flex-container(center, row, center);
+    width: 100%;
+    span {
+      margin-top: 0.4vh;
+      width: 95%;
+      height: 0.5px;
+      background-color: #535a5f;
+    }
+  }
+}
+.bottom-item-container {
+  outline: 1px solid lime;
+  color: aliceblue;
+  @include flex-container(center, row, center);
+  position: relative;
+  padding-left: 1vw;
+  .side-items {
+    display: flex;
+    width: 100%;
+    align-items: center;    
+    .add-icon {
+      font-size: 1.57rem;
+    }
+    .square-icon {
+      position: inherit;
+      right: -10vw;
+      font-size: 1.34rem;
+    }
+    .text-list {
+      padding-left: 1vw;
+      font-size: 0.9rem;
+    }
+  }
+}

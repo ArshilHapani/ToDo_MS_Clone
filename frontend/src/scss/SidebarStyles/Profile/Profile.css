@@ -11,6 +11,10 @@
 .profile-container div h6 {
   margin-left: 1vw;
 }
+.profile-container div h4 span,
+.profile-container div h6 span {
+  font-size: 1rem;
+}
 .profile-container img {
   border-radius: 50%;
   -webkit-border-radius: 50%;

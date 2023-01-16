@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Pacifico&family=Sofia+Sans:wght@100&family=Work+Sans:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Pacifico&family=Sofia+Sans:wght@100;300&family=Work+Sans:wght@900&display=swap");
 .profile-container {
   margin-top: 3vh;
   color: #fff;
@@ -14,6 +16,13 @@
 .profile-container div h4 span,
 .profile-container div h6 span {
   font-size: 1rem;
+}
+.profile-container div h4 {
+  font-family: "Sofia Sans", sans-serif;
+}
+.profile-container div h6 {
+  color: #999999;
+  font-family: "Montserrat", sans-serif;
 }
 .profile-container img {
   border-radius: 50%;

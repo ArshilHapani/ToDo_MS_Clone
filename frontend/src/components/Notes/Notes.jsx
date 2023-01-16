@@ -1,13 +1,23 @@
-import React from 'react'
-import '../../scss/Notes/Notes.css'
+import React from "react";
+import { useStateContext } from "../../context/stateContext";
+import "../../scss/Notes/Notes.css";
+import Header from "./Header/Header";
+import EmptyNoteItem from "./NotesItems/EmptyNoteItem";
+import NoteItem from "./NotesItems/NoteItem";
+import TextBoxToDo from "./TextBoxTODO/TextBoxToDo";
 const Notes = () => {
+  const { createNote } = useStateContext();
   return (
-    <div className='notes-component'>
-      <h1>Check Notes 
-          <p>Paragraph Element</p>
-        </h1>      
-    </div>
-  )
-}
+    <>
+      <div className="notes-component">
+        <Header title="My Day" />
+        <div className="Notes-flex-container">
+          {createNote ? <NoteItem /> : <EmptyNoteItem />}
+        </div>
+        <TextBoxToDo />
+      </div>
+    </>
+  );
+};
 
-export default Notes
+export default Notes;

@@ -1,0 +1,29 @@
+@import "../../utils/_mixins";
+@import "../../utils/variables";
+.null-container-img {
+  margin-top: 10vh;
+  @include flex-container(center, column, center);
+  .img-container {
+    border-radius: 8px;
+    height: 32vh;
+    background-color: rgba(49, 49, 49, 0.582);
+    width: 41vh;
+    @include flex-container(center, column, center);
+    img {
+      height: 10vh;
+      width: 10vh;
+    }
+    h3 {
+      color: $Font-PrimaryColor;
+      font-family: $Primary-fonts;
+      margin-top: 3vh;
+    }
+    span {
+      color: $Font-PrimaryColor;
+      text-align: center;
+      font-size: 0.8em;
+      display: flex;
+      margin: 0 2vw;
+    }
+  }
+}

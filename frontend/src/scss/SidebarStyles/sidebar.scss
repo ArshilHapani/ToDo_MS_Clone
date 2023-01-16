@@ -8,5 +8,6 @@
 .bottom-item{
     @include flex-container(flex-end, row, flex-start);
     position: absolute;
+    width: 22vw;
     bottom: 0vh;
 }

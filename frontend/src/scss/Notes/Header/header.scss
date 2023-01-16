@@ -1,0 +1,58 @@
+@import "../../utils/mixins";
+@import "../../utils/variables";
+.notes-header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  .right-item {
+    @include flex-container(flex-start, column, flex-start);
+    color: $Font-PrimaryColor;
+    padding: 6vh 5vw;
+    width: 78%;
+    p {
+      font-size: 1.7rem;
+      font-weight: 600;
+    }
+    span {
+      font-size: 0.9em;
+      font-family: $Primary-fonts;
+      letter-spacing: 0.1px;
+      color: #fff;
+      margin-top: 1vh;
+    }
+  }
+
+  .left-items {
+    color: $Font-PrimaryColor;
+    @include flex-container(center, row, flex-end);
+    width: auto;
+    i {
+      display: flex;
+      align-self: center;
+      color: #fff;
+      font-size: 1.1em;
+      padding: 5px;
+      background-color: #232323b1;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      margin-left: 2vw;
+    }
+    i:hover {
+      background-color: #3d4447;
+    }
+    span {
+      display: flex;
+      align-self: center;
+      color: #fff;
+      font-size: 0.8em;
+      margin-left: 2vw;
+      padding: 8px;
+    }
+    span:hover {
+      background-color: #9f9e9e47;
+    }
+  }
+}

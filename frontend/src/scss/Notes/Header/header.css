@@ -1,0 +1,61 @@
+.notes-header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.notes-header-container .right-item {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #e2e2e2;
+  padding: 6vh 5vw;
+  width: 78%;
+}
+.notes-header-container .right-item p {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+.notes-header-container .right-item span {
+  font-size: 0.9em;
+  font-family: "Sofia Sans", sans-serif;
+  letter-spacing: 0.1px;
+  color: #fff;
+  margin-top: 1vh;
+}
+.notes-header-container .left-items {
+  color: #e2e2e2;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: auto;
+}
+.notes-header-container .left-items i {
+  display: flex;
+  align-self: center;
+  color: #fff;
+  font-size: 1.1em;
+  padding: 5px;
+  background-color: rgba(35, 35, 35, 0.6941176471);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-left: 2vw;
+}
+.notes-header-container .left-items i:hover {
+  background-color: #3d4447;
+}
+.notes-header-container .left-items span {
+  display: flex;
+  align-self: center;
+  color: #fff;
+  font-size: 0.8em;
+  margin-left: 2vw;
+  padding: 8px;
+}
+.notes-header-container .left-items span:hover {
+  background-color: rgba(159, 158, 158, 0.2784313725);
+}/*# sourceMappingURL=header.css.map */

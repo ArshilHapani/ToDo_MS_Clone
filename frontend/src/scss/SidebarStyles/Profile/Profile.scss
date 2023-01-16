@@ -1,27 +1,36 @@
 @import "../../utils/mixins";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Pacifico&family=Sofia+Sans:wght@100&family=Work+Sans:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Pacifico&family=Sofia+Sans:wght@100;300&family=Work+Sans:wght@900&display=swap");
 .profile-container {
-    margin-top: 3vh;
-    color: #fff;
-    flex-direction: row;
-    @include flex-container(center, row, flex-start);
-    div {
-        h4,
-        h6 {
-            margin-left: 1vw;
-            span{
-                font-size: 1rem;                               
-            }
-        }
+  margin-top: 3vh;
+  color: #fff;
+  flex-direction: row;
+  @include flex-container(center, row, flex-start);
+  div {
+    h4,
+    h6 {
+      margin-left: 1vw;
+      span {
+        font-size: 1rem;
+      }
     }
-    img {
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
-        height: 7vh;
-        width: 7vh;
-        margin-left: 1.5vw;
-        margin-top: 1vh;
+    h4 {
+      font-family: "Sofia Sans", sans-serif;
     }
+    h6 {
+      color: #999999;
+      font-family: "Montserrat", sans-serif;
+    }
+  }
+  img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    height: 7vh;
+    width: 7vh;
+    margin-left: 1.5vw;
+    margin-top: 1vh;
+  }
 }

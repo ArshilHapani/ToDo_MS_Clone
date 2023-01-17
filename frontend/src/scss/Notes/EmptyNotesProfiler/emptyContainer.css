@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap");
 .null-container-img {
   margin-top: 10vh;
   display: flex;
@@ -7,7 +8,7 @@
 }
 .null-container-img .img-container {
   border-radius: 8px;
-  height: 32vh;
+  height: 35vh;
   background-color: rgba(49, 49, 49, 0.582);
   width: 41vh;
   display: flex;
@@ -19,15 +20,17 @@
   height: 10vh;
   width: 10vh;
 }
-.null-container-img .img-container h3 {
-  color: #e2e2e2;
-  font-family: "Sofia Sans", sans-serif;
+.null-container-img .img-container article {
+  color: #fff;
+  font-family: "Source Sans Pro", sans-serif;
   margin-top: 3vh;
+  margin-bottom: 2vh;
+  font-size: 1.1em;
 }
 .null-container-img .img-container span {
   color: #e2e2e2;
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.7em;
   display: flex;
   margin: 0 2vw;
 }/*# sourceMappingURL=emptyContainer.css.map */

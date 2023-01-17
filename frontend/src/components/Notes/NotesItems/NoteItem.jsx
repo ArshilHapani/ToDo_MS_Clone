@@ -1,27 +1,37 @@
 import React, { useState } from "react";
 import "../../../scss/Notes/NoteItem/noteItem.css";
-import { FaRegCircle } from "react-icons/fa";
-import { AiOutlineStar, AiOutlineCheckCircle } from "react-icons/ai";
+import { FaRegCircle, FaRegCheckCircle } from "react-icons/fa";
+// import { FaRegCircle } from "react-icons/fa";
+import { AiOutlineStar } from "react-icons/ai";
 import { useStateContext } from "../../../context/stateContext";
 const NoteItem = () => {
   const { notes } = useStateContext();
-  const [checkSum, setCheckSum] = useState(false);
-  const trueSetter = (val) => {
-    setCheckSum(val);
-  };
+  // console.log(notes);
+  const [isHover, setIsHover] = useState(false);
+  function trueSetter(val) {
+    setIsHover(val);
+  }
   return (
-    <div className="note-container">
-      <i
-        onMouseEnter={() => trueSetter(true)}
-        onMouseLeave={() => trueSetter(false)}
-      >
-        {checkSum ? <AiOutlineCheckCircle /> : <FaRegCircle />}
-      </i>
-      <p>{notes}</p>
-      <span id="checkSum">
-        <AiOutlineStar />
-      </span>
-    </div>
+    <>
+      {notes.map((note) => (
+        <div className="note-container" key={note}>
+          <i
+            // id="note"
+            onPointerOver={() => trueSetter(true)}
+            onPointerOut={() => trueSetter(false)}
+            // onMouseMoveCapture={() => trueSetter(false)}
+            // onMouseDownCapture={() => trueSetter(true)}
+          >
+            {isHover ? <FaRegCheckCircle /> : <FaRegCircle />}
+            {/* <FaRegCircle /> */}
+          </i>
+          <p>{note}</p>
+          <span>
+            <AiOutlineStar />
+          </span>
+        </div>
+      ))}
+    </>
   );
 };
 

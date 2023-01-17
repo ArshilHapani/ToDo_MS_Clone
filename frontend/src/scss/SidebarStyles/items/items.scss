@@ -4,12 +4,13 @@
 .side-bar-items-container {
   @include flex-container(flex-start, column, flex-start);
   padding-top: 2vh;
-  color: aliceblue;
   .side-items {
+    color: aliceblue;
     @include flex-container(center, row, flex-start);
     padding: 2vh 2vh 2vh 2.3vh;
     margin-bottom: 0.4vh;
     width: 100%;
+    text-decoration: none;
     .icons {
       padding-right: 1.5vw;
       align-self: center;
@@ -18,8 +19,8 @@
       color: #8795a0;
     }
     .title {
-      font-size:$Font-size;
-      font-family:$Primary-fonts;
+      font-size: $Font-size;
+      font-family: $Primary-fonts;
     }
   }
   .side-items:hover {
@@ -66,7 +67,7 @@
     }
     .text-list {
       padding-left: 1vw;
-      font-size:$Font-size;
+      font-size: $Font-size;
       font-family: $Primary-fonts;
     }
   }
@@ -86,8 +87,8 @@
     justify-content: center;
     box-sizing: border-box;
     .square-icon {
-      font-size: 1.4rem;      
-      padding:  0 1vh;
+      font-size: 1.4rem;
+      padding: 0 1vh;
       margin-right: 0.5vw;
       color: #d2d2d2;
     }

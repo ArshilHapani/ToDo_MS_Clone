@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap");
 .notes-component {
   height: 100vh;
   width: 80vw;
-  background-image: url("../../images/Wallpaper1.jpg");
+  background-image: url("../../images/wp2532974-night-mountain-wallpapers.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   border-top-left-radius: 5px;
@@ -12,6 +13,19 @@
   flex-direction: column;
   align-items: center;
   width: 70%;
-  height: 70%;
+  height: 60%;
+  overflow-x: hidden;
+  overflow-y: auto;
   margin: auto 5vh;
+  margin-bottom: 1vh;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
 }/*# sourceMappingURL=Notes.css.map */

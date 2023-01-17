@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   width: 100%;
+  user-select: none;
   .right-item {
     @include flex-container(flex-start, column, flex-start);
     color: $Font-PrimaryColor;

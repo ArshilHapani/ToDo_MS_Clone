@@ -12,7 +12,7 @@ const Sidebar = () => {
         <Search />
         <Items />
         <div className="bottom-item">
-          <BottomItem/>          
+          <BottomItem />
         </div>
       </div>
     </>

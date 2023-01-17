@@ -3,19 +3,23 @@
 import { useState, useContext, createContext } from "react";
 
 const StateContext = createContext();
-
+const noteArr = [];
+// let temp = JSON.parse(localStorage.getItem("notes"));
+// console.log(temp);
 export const ContextProvider = ({ children }) => {
-  const [createTodo, setCreateTodo] = useState(null);
   const [createNote, setCreateNote] = useState(false);
-  const [notes, setNotes] = useState(null);
-  function createNoteOne() {
-    setNotes(createTodo);
+  const [notes, setNotes] = useState([]);
+  function createNoteOne(value) {
+    noteArr.push(value);
+    console.log(noteArr);
+    // localStorage.setItem("notes", JSON.stringify(noteArr));
+    setNotes(noteArr);
     setCreateNote(true);
   }
+
   return (
     <StateContext.Provider
       value={{
-        setCreateTodo,
         createNoteOne,
         createNote,
         notes,

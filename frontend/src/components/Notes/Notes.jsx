@@ -4,23 +4,132 @@ import { useStateContext } from "../../context/stateContext";
 import "../../scss/Notes/Notes.css";
 import Header from "./Header/Header";
 import EmptyNoteItem from "./NotesItems/EmptyNoteItem";
-import NoteItem from "./NotesItems/NoteItem";
 import TextBoxToDo from "./TextBoxTODO/TextBoxToDo";
 import Calender from "../../images/PlainCalender.png";
 import important from "../../images/Paper.png";
 import planned from "../../images/scheduleCalendar.png";
 import assignedToMe from "../../images/assignmentTask.png";
 import task from "../../images/to-do-list_Task.png";
+import { AiOutlineStar, AiOutlineUser, AiOutlineHome } from "react-icons/ai";
+import { CgMenuBoxed } from "react-icons/cg";
+import {
+  AssignedToMe,
+  ImportantNotes,
+  NoteItem,
+  PlannedNotes,
+  Tasks,
+} from "../Notes/NotesItems/NotesComponents/Exporter";
 const Notes = () => {
   const { createNote } = useStateContext();
+
+  const weekday = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  const d = new Date();
+  let day = weekday[d.getDay()];
+
+  const month = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let name = month[d.getMonth()];
+  let date = d.getDate();
+
   return (
     <>
       <div className="notes-component">
-        <Header title="My Day" />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <Header
+                title={"My Day"}
+                date={date}
+                day={`${day},`}
+                name={name}
+                bulbTrue={true}
+                key={"GoAway"}
+              />
+            }
+          />
+          <Route
+            exact
+            path="/important"
+            element={
+              <Header
+                title={"Important"}
+                space={true}
+                icon={<AiOutlineStar />}
+                date={""}
+                day={""}
+                name={""}
+                key={"Luffy"}
+              />
+            }
+          />
+          <Route
+            exact
+            path="/planned"
+            element={
+              <Header
+                title={"Planned"}
+                space={true}
+                icon={<CgMenuBoxed />}
+                key={"Robin♥"}
+              />
+            }
+          />
+          <Route
+            exact
+            path="/assignedToMe"
+            element={
+              <Header
+                title={"Assigned to me"}
+                space={true}
+                icon={<AiOutlineUser />}
+                key={"Arshil"}
+              />
+            }
+          />
+          <Route
+            exact
+            path="/tasks"
+            element={
+              <Header
+                title={"Tasks"}
+                space={true}
+                icon={<AiOutlineHome />}
+                key={"Arshil_Hapani"}
+              />
+            }
+          />
+        </Routes>
         <div className="Notes-flex-container">
           {createNote ? (
             <Routes>
               <Route element={<NoteItem />} exact path="/" />
+              <Route element={<ImportantNotes />} exact path="/important" />
+              <Route element={<PlannedNotes />} exact path="/planned" />
+              <Route element={<AssignedToMe />} exact path="/assignedToMe" />
+              <Route element={<Tasks />} exact path="/tasks" />
             </Routes>
           ) : (
             <Routes>

@@ -3,6 +3,7 @@
 .null-container-img {
   margin-top: 10vh;
   @include flex-container(center, column, center);
+  backdrop-filter: blur(5px);
   .img-container {
     border-radius: 8px;
     height: 35vh;

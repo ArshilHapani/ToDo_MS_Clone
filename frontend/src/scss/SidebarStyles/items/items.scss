@@ -3,6 +3,7 @@
 
 .side-bar-items-container {
   @include flex-container(flex-start, column, flex-start);
+  padding: 0 0.2vw;
   padding-top: 2vh;
   .side-items {
     color: aliceblue;
@@ -34,13 +35,23 @@
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
   }
-  .side-items.active {
-    @include flex-container(center, row, flex-start);
-    background-color: #313131;
-    width: 100%;
-    cursor: default;
-  }
 
+  .active {
+    @include active-class;
+  }
+  .active::before {
+    content: "";
+    position: absolute;
+    height: 3vh;
+    width: 0.3vw;
+    left: 0.2vw;
+    background-color: #76b9ed;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
   .horizontal-rule {
     @include flex-container(center, row, center);
     width: 100%;

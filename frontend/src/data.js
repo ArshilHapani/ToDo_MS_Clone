@@ -1,35 +1,31 @@
 import { FiSun } from "react-icons/fi";
-import {
-  AiOutlineStar,
-  AiOutlineUser,
-  AiOutlineCalendar,
-  AiOutlineHome,
-} from "react-icons/ai";
+import { AiOutlineStar, AiOutlineUser, AiOutlineHome } from "react-icons/ai";
+import { CgMenuBoxed } from "react-icons/cg";
 
 export const sideBarItems = [
   {
     title: "My Day",
     icon: <FiSun />,
-    path: "",
+    path: "/",
   },
   {
     title: "Important",
     icon: <AiOutlineStar />,
-    path: "important",
+    path: "/important",
   },
   {
     title: "Planned",
-    icon: <AiOutlineCalendar />,
-    path: "planned",
+    icon: <CgMenuBoxed />,
+    path: "/planned",
   },
   {
     title: "Assigned to me",
     icon: <AiOutlineUser />,
-    path: "assignedToMe",
+    path: "/assignedToMe",
   },
   {
     title: "Tasks",
     icon: <AiOutlineHome />,
-    path: "tasks",
+    path: "/tasks",
   },
 ];

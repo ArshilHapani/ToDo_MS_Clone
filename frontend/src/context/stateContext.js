@@ -10,46 +10,63 @@ const noteArr = [],
   taskArr = [],
   assignArr = [];
 export const ContextProvider = ({ children }) => {
-  const [createNote, setCreateNote] = useState(false);
+  const [myDay, setMyDay] = useState(true); //For myDay
+  const [createImportant, setCreateImportant] = useState(true); //For important
+  const [createPlanned, setCreatePlanned] = useState(true); //For planned
+  const [createTasks, setCreateTasks] = useState(true); //For tasks
+  const [createAssign, setCreateAssign] = useState(true); //For assign
 
   const [notes, setNotes] = useState([]); //For myDay
   const [important, setImportant] = useState([]); //For important
   const [planned, setPlanned] = useState([]); //For planned
   const [task, setTask] = useState([]); //For tasks
-  const [assignedToMe, setAssignedToMe] = useState([]); //For assigne
+  const [assignedToMe, setAssignedToMe] = useState([]); //For assign
+
+  // useEffect(() => {
+  //   if (notes !== null) {
+  //     setMyDay(true);
+  //   } else {
+  //     setMyDay(false);
+  //     console.log("createImportant :>> ", createImportant);
+  //     console.log("\n\nmyDay :>> ", myDay);
+  //   }
+  // }, [createNoteOne]);
 
   const [location, setLocation] = useState(null);
-  const createNoteOne = (value) => {
+  function createNoteOne(value) {
     if (location === "myTasks") {
       noteArr.push(value);
       setNotes(noteArr);
-      setCreateNote(true);
+      setMyDay(false);
     } else if (location === "important") {
       importantArr.push(value);
       setImportant(importantArr);
-      setCreateNote(true);
+      setCreateImportant(false);
     } else if (location === "planned") {
       plannedArr.push(value);
       setPlanned(plannedArr);
-      setCreateNote(true);
+      setCreatePlanned(false);
     } else if (location === "assignedToMe") {
       assignArr.push(value);
       setAssignedToMe(assignArr);
-      setCreateNote(true);
+      setCreateAssign(false);
     } else if (location === "tasks") {
       taskArr.push(value);
       setTask(taskArr);
-      setCreateNote(true);
+      setCreateTasks(false);
     } else {
-      setCreateNote(false);
+      setMyDay(true);
+      setCreateImportant(true);
+      setCreatePlanned(true);
+      setCreateTasks(true);
+      setCreateAssign(true);
     }
-  };
+  }
 
   return (
     <StateContext.Provider
       value={{
         createNoteOne,
-        createNote,
         setLocation,
         location,
 
@@ -58,6 +75,12 @@ export const ContextProvider = ({ children }) => {
         task,
         assignedToMe,
         notes,
+
+        createImportant,
+        createPlanned,
+        createTasks,
+        createAssign,
+        myDay,
       }}
     >
       {children}

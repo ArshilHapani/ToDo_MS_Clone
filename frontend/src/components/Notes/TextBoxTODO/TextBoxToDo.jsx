@@ -7,7 +7,8 @@ const TextBoxToDo = () => {
   const { createNoteOne } = useStateContext();
   const [focusTB, setFocusTB] = useState(false);
   const valueDefault = useRef();
-  const createNoteFn = () => {
+  const createNoteFn = (e) => {
+    e.preventDefault();
     createNoteOne(valueDefault.current.value);
     valueDefault.current.value = "";
   };
@@ -15,20 +16,22 @@ const TextBoxToDo = () => {
     setFocusTB(val);
   };
   return (
-    <div className="bottom-text">
-      <button onClick={createNoteFn}>
-        {focusTB ? <VscAdd /> : <FaRegCircle />}
-      </button>
-      <input
-        type="text"
-        placeholder="Add a Task"
-        id="tb-primary"
-        onFocus={() => setFocus(true)}
-        onBlur={() => setFocus(false)}
-        ref={valueDefault}
-        autoComplete="off"
-      />
-    </div>
+    <form onSubmit={createNoteFn}>
+      <div className="bottom-text">
+        <button onClick={createNoteFn}>
+          {focusTB ? <VscAdd /> : <FaRegCircle />}
+        </button>
+        <input
+          type="text"
+          placeholder="Add a Task"
+          id="tb-primary"
+          onFocus={() => setFocus(true)}
+          onBlur={() => setFocus(false)}
+          ref={valueDefault}
+          autoComplete="off"
+        />
+      </div>
+    </form>
   );
 };
 

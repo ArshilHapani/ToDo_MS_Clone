@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { sideBarItems } from "../../data";
 import "../../scss/SidebarStyles/items/items.css";
 import { Link, useLocation } from "react-router-dom";
@@ -6,17 +6,19 @@ import { useStateContext } from "../../context/stateContext";
 const Items = () => {
   const location = useLocation();
   const { setLocation } = useStateContext();
-  if (location.pathname === "/") {
-    setLocation("myTasks");
-  } else if (location.pathname === "/important") {
-    setLocation("important");
-  } else if (location.pathname === "/planned") {
-    setLocation("planned");
-  } else if (location.pathname === "/assignedToMe") {
-    setLocation("assignedToMe");
-  } else if (location.pathname === "/tasks") {
-    setLocation("tasks");
-  }
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setLocation("myTasks");
+    } else if (location.pathname === "/important") {
+      setLocation("important");
+    } else if (location.pathname === "/planned") {
+      setLocation("planned");
+    } else if (location.pathname === "/assignedToMe") {
+      setLocation("assignedToMe");
+    } else if (location.pathname === "/tasks") {
+      setLocation("tasks");
+    }
+  }, [location.pathname, setLocation]);
   return (
     <div className="side-bar-items-container">
       {sideBarItems.map((item) => {

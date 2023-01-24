@@ -7,6 +7,7 @@
   flex-direction: row;
   @include flex-container(center, row, flex-start);
   div {
+    margin-top: 0.5em;
     h4,
     h6 {
       margin-left: 1vw;
@@ -25,6 +26,28 @@
       color: #999999;
       font-size: 0.6em;
       font-family: "Montserrat", sans-serif;
+    }
+
+    .offline-one {
+      font-size: 0.6em;
+      margin-left: 1vw;
+      display: flex;
+      align-items: center;
+      color: #999999;
+
+      &::before {
+        content: "";
+        position: relative;
+        height: 6px;
+        width: 6px;
+        background: orange;
+        margin-right: 3px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+      }
     }
   }
   img {

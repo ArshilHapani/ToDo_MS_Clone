@@ -15,13 +15,26 @@ import { CgMenuBoxed } from "react-icons/cg";
 import {
   AssignedToMe,
   ImportantNotes,
-  NoteItem,
+  MyDay,
   PlannedNotes,
   Tasks,
 } from "../Notes/NotesItems/NotesComponents/Exporter";
+import {
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+} from "../../images/imageExporter";
 const Notes = () => {
-  const { createNote } = useStateContext();
-
+  const {
+    createImportant,
+    createPlanned,
+    createTasks,
+    createAssign,
+    myDay,
+    location,
+  } = useStateContext();
   const weekday = [
     "Sunday",
     "Monday",
@@ -51,10 +64,28 @@ const Notes = () => {
   ];
   let name = month[d.getMonth()];
   let date = d.getDate();
-
+  let imageVar;
+  if (location === "important") {
+    imageVar = `url(${image2})`;
+  } else if (location === "myTasks") {
+    imageVar = `url(${image1})`;
+  } else if (location === "planned") {
+    imageVar = `url(${image3})`;
+  } else if (location === "assignedToMe") {
+    imageVar = `url(${image4})`;
+  } else if (location === "tasks") {
+    imageVar = `url(${image5})`;
+  }
+  let myStyle = {
+    backgroundImage: imageVar,
+    height: "100vh",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  };
   return (
     <>
-      <div className="notes-component">
+      {/* Header Component */}
+      <div className="notes-component" style={myStyle}>
         <Routes>
           <Route
             exact
@@ -122,17 +153,11 @@ const Notes = () => {
             }
           />
         </Routes>
+
+        {/* Choose whether to show empty note container or the notes container ||| To achieve that was pain in the ....🍑 */}
         <div className="Notes-flex-container">
-          {createNote ? (
-            <Routes>
-              <Route element={<NoteItem />} exact path="/" />
-              <Route element={<ImportantNotes />} exact path="/important" />
-              <Route element={<PlannedNotes />} exact path="/planned" />
-              <Route element={<AssignedToMe />} exact path="/assignedToMe" />
-              <Route element={<Tasks />} exact path="/tasks" />
-            </Routes>
-          ) : (
-            <Routes>
+          <Routes>
+            {myDay ? (
               <Route
                 exact
                 path="/"
@@ -146,6 +171,11 @@ const Notes = () => {
                   />
                 }
               />
+            ) : (
+              <Route element={<MyDay />} exact path="/" />
+            )}
+
+            {createImportant ? (
               <Route
                 exact
                 path="/important"
@@ -156,6 +186,11 @@ const Notes = () => {
                   />
                 }
               />
+            ) : (
+              <Route element={<ImportantNotes />} exact path="/important" />
+            )}
+
+            {createPlanned ? (
               <Route
                 exact
                 path="/planned"
@@ -166,6 +201,11 @@ const Notes = () => {
                   />
                 }
               />
+            ) : (
+              <Route element={<PlannedNotes />} exact path="/planned" />
+            )}
+
+            {createAssign ? (
               <Route
                 exact
                 path="/assignedToMe"
@@ -176,13 +216,20 @@ const Notes = () => {
                   />
                 }
               />
+            ) : (
+              <Route element={<AssignedToMe />} exact path="/assignedToMe" />
+            )}
+
+            {createTasks ? (
               <Route
                 exact
                 path="/tasks"
                 element={<EmptyNoteItem desc={"Tasks ToDo."} hero={task} />}
               />
-            </Routes>
-          )}
+            ) : (
+              <Route element={<Tasks />} exact path="/tasks" />
+            )}
+          </Routes>
         </div>
         <TextBoxToDo />
       </div>

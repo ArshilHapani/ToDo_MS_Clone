@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap");
 .note-container {
+  position: relative;
   color: #e2e2e2;
   background-color: rgba(6, 12, 16, 0.5568627451);
   width: 97%;
@@ -22,6 +23,9 @@
   display: flex;
   align-self: center;
 }
+.note-container i:hover {
+  color: red;
+}
 .note-container span {
   display: flex;
   align-items: center;
@@ -39,4 +43,22 @@
 
 .note-container:hover {
   background-color: rgba(30, 30, 30, 0.5019607843);
+}
+
+#context-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  height: 200px;
+  width: 180px;
+  z-index: 9999999999;
+  animation: fadeInDown 0.7s linear;
+  -webkit-animation: fadeInDown 0.7s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+#context-menu.active {
+  display: block;
 }/*# sourceMappingURL=noteItem.css.map */

@@ -1,6 +1,8 @@
 @import "../../utils/_mixins";
 @import "../../utils/variables";
+
 .note-container {
+  position: relative;
   color: $Font-PrimaryColor;
   background-color: #060c108e;
   width: 97%;
@@ -15,11 +17,15 @@
   display: flex;
   align-items: center;
   backdrop-filter: blur(5px);
+
   i,
   span {
     font-size: 1em;
     display: flex;
     align-self: center;
+  }
+  i:hover {
+    color: red;
   }
   // i:hover::before {
   //   content: "✓";
@@ -51,4 +57,20 @@
 }
 .note-container:hover {
   background-color: #1e1e1e80;
+}
+
+#context-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  height: 200px;
+  width: 180px;
+  z-index: 9999999999;
+  animation: fadeInDown 0.7s linear;
+  -webkit-animation: fadeInDown 0.7s linear;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+#context-menu.active {
+  display: block;
 }

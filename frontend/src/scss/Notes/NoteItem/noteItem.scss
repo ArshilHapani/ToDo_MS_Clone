@@ -58,19 +58,3 @@
 .note-container:hover {
   background-color: #1e1e1e80;
 }
-
-#context-menu {
-  display: none;
-  position: absolute;
-  background-color: white;
-  height: 200px;
-  width: 180px;
-  z-index: 9999999999;
-  animation: fadeInDown 0.7s linear;
-  -webkit-animation: fadeInDown 0.7s linear;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-#context-menu.active {
-  display: block;
-}

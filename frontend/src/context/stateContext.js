@@ -9,6 +9,10 @@ const noteArr = [],
   plannedArr = [],
   taskArr = [],
   assignArr = [];
+localStorage.setItem(
+  "notes",
+  JSON.stringify(noteArr, importantArr, plannedArr, taskArr, assignArr)
+);
 export const ContextProvider = ({ children }) => {
   const [myDay, setMyDay] = useState(true); //For myDay
   const [createImportant, setCreateImportant] = useState(true); //For important
@@ -21,16 +25,6 @@ export const ContextProvider = ({ children }) => {
   const [planned, setPlanned] = useState([]); //For planned
   const [task, setTask] = useState([]); //For tasks
   const [assignedToMe, setAssignedToMe] = useState([]); //For assign
-
-  // useEffect(() => {
-  //   if (notes !== null) {
-  //     setMyDay(true);
-  //   } else {
-  //     setMyDay(false);
-  //     console.log("createImportant :>> ", createImportant);
-  //     console.log("\n\nmyDay :>> ", myDay);
-  //   }
-  // }, [createNoteOne]);
 
   const [location, setLocation] = useState(null);
   function createNoteOne(value) {

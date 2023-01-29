@@ -4,6 +4,8 @@ import { FaRegCircle, FaRegCheckCircle } from "react-icons/fa";
 // import { FaRegCircle } from "react-icons/fa";
 import { AiOutlineStar } from "react-icons/ai";
 import { useStateContext } from "../../../../context/stateContext";
+import { handleRightClick } from "../../../functions/contextHandler";
+import ContextMenu from "../../contextMenu/ContextMenu";
 const AssignedToMe = ({ id }) => {
   const { assignedToMe } = useStateContext();
   const [isHover, setIsHover] = useState(false);
@@ -12,8 +14,13 @@ const AssignedToMe = ({ id }) => {
   }
   return (
     <>
-      {assignedToMe.map((note) => (
-        <div className="note-container" key={note}>
+      {assignedToMe.map((note, index) => (
+        <div
+          className="note-container"
+          key={note}
+          id={`Arshil_${index}`}
+          onContextMenu={(e) => handleRightClick(e, index)}
+        >
           <i
             onPointerOver={() => trueSetter(true)}
             onPointerOut={() => trueSetter(false)}
@@ -24,6 +31,7 @@ const AssignedToMe = ({ id }) => {
           <span>
             <AiOutlineStar />
           </span>
+          <ContextMenu />
         </div>
       ))}
     </>

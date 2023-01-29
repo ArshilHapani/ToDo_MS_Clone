@@ -3,9 +3,10 @@
 .null-container-img {
   margin-top: 10vh;
   @include flex-container(center, column, center);
+  backdrop-filter: blur(5px);
   .img-container {
     border-radius: 8px;
-    height: 32vh;
+    height: 35vh;
     background-color: rgba(49, 49, 49, 0.582);
     width: 41vh;
     @include flex-container(center, column, center);
@@ -13,15 +14,17 @@
       height: 10vh;
       width: 10vh;
     }
-    h3 {
-      color: $Font-PrimaryColor;
+    article {
+      color: #fff;
       font-family: $Primary-fonts;
       margin-top: 3vh;
+      margin-bottom: 2vh;
+      font-size: 1.1em;
     }
     span {
       color: $Font-PrimaryColor;
       text-align: center;
-      font-size: 0.8em;
+      font-size: 0.7em;
       display: flex;
       margin: 0 2vw;
     }

@@ -1,6 +1,12 @@
-@mixin flex-container($alignments,$flex-direction,$justification) {
-    display: flex;
-    align-items: $alignments;
-    flex-direction: $flex-direction;
-    justify-content: $justification;
+@mixin flex-container($alignments, $flex-direction, $justification) {
+  display: flex;
+  align-items: $alignments;
+  flex-direction: $flex-direction;
+  justify-content: $justification;
+}
+
+@mixin active-class {
+  background-color: #313131;
+  width: 100%;
+  cursor: default;
 }

@@ -3,13 +3,15 @@
 
 .side-bar-items-container {
   @include flex-container(flex-start, column, flex-start);
+  padding: 0 0.2vw;
   padding-top: 2vh;
-  color: aliceblue;
   .side-items {
+    color: aliceblue;
     @include flex-container(center, row, flex-start);
     padding: 2vh 2vh 2vh 2.3vh;
     margin-bottom: 0.4vh;
     width: 100%;
+    text-decoration: none;
     .icons {
       padding-right: 1.5vw;
       align-self: center;
@@ -18,8 +20,8 @@
       color: #8795a0;
     }
     .title {
-      font-size:$Font-size;
-      font-family:$Primary-fonts;
+      font-size: $Font-size;
+      font-family: $Primary-fonts;
     }
   }
   .side-items:hover {
@@ -33,19 +35,29 @@
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
   }
-  .side-items.active {
-    @include flex-container(center, row, flex-start);
-    background-color: #313131;
-    width: 100%;
-    cursor: default;
-  }
 
+  .active {
+    @include active-class;
+  }
+  .active::before {
+    content: "";
+    position: absolute;
+    height: 3vh;
+    width: 0.3vw;
+    left: 0.2vw;
+    background-color: #76b9ed;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
   .horizontal-rule {
     @include flex-container(center, row, center);
     width: 100%;
     span {
       margin-top: 0.4vh;
-      width: 95%;
+      width: 100%;
       height: 0.5px;
       background-color: #535a5f;
     }
@@ -66,7 +78,7 @@
     }
     .text-list {
       padding-left: 1vw;
-      font-size:$Font-size;
+      font-size: $Font-size;
       font-family: $Primary-fonts;
     }
   }
@@ -86,8 +98,8 @@
     justify-content: center;
     box-sizing: border-box;
     .square-icon {
-      font-size: 1.4rem;      
-      padding:  0 1vh;
+      font-size: 1.4rem;
+      padding: 0 1vh;
       margin-right: 0.5vw;
       color: #d2d2d2;
     }

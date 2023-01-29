@@ -1,60 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../../scss/Notes/Header/header.css";
 import { TbLayersIntersect2 } from "react-icons/tb";
 import { AiOutlineBulb } from "react-icons/ai";
 import { SlOptions } from "react-icons/sl";
-const Header = ({ title }) => {
-  const weekday = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+import ThemeMenu from "./ThemeMenu";
+const Header = ({ title, date, day, name, icon, space, bulbTrue }) => {
+  const [themeContainer, setThemeContainer] = useState(false);
 
-  const d = new Date();
-  let day = weekday[d.getDay()];
-
-  const month = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  let name = month[d.getMonth()];
-  let date = d.getDate();
-
-  return (
-    <div className="notes-header-container">
-      <div className="right-item">
-        <p>{title}</p>
-        <span>
-          {day}, {name} {date}
-        </span>
+  if (themeContainer) return <ThemeMenu />;
+  else
+    return (
+      <div className="notes-header-container">
+        <div className="right-item">
+          <p>
+            {icon}
+            {space && <span>&nbsp;</span>}
+            {title}
+          </p>
+          <span>
+            {day} {name} {date}
+          </span>
+        </div>
+        <div className="left-items">
+          <i>
+            <TbLayersIntersect2 />
+          </i>
+          {bulbTrue && (
+            <i
+              onClick={() =>
+                alert(
+                  "Zindagi me kabhi dhang k idea ate hai tumhe jo aaj aaenge? Kuch nhi hai mere pass nikal 🥺"
+                )
+              }
+            >
+              <AiOutlineBulb />
+            </i>
+          )}
+          <span
+            onClick={() =>
+              themeContainer === true
+                ? setThemeContainer(false)
+                : setThemeContainer(true)
+            }
+          >
+            <SlOptions />
+          </span>
+        </div>
       </div>
-      <div className="left-items">
-        <i>
-          <TbLayersIntersect2 />
-        </i>
-        <i>
-          <AiOutlineBulb />
-        </i>
-        <span>
-          <SlOptions />
-        </span>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Header;

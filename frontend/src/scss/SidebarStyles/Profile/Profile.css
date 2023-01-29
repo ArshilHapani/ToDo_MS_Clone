@@ -9,20 +9,48 @@
   flex-direction: row;
   justify-content: flex-start;
 }
+.profile-container div {
+  margin-top: 0.5em;
+}
 .profile-container div h4,
 .profile-container div h6 {
   margin-left: 1vw;
+  display: flex;
+  align-items: center;
 }
 .profile-container div h4 span,
 .profile-container div h6 span {
-  font-size: 1rem;
+  font-size: 0.8rem;
+  font-weight: 400;
 }
 .profile-container div h4 {
   font-family: "Sofia Sans", sans-serif;
+  font-size: 0.8em;
 }
 .profile-container div h6 {
   color: #999999;
+  font-size: 0.6em;
   font-family: "Montserrat", sans-serif;
+}
+.profile-container div .offline-one {
+  font-size: 0.6em;
+  margin-left: 1vw;
+  display: flex;
+  align-items: center;
+  color: #999999;
+}
+.profile-container div .offline-one::before {
+  content: "";
+  position: relative;
+  height: 6px;
+  width: 6px;
+  background: orange;
+  margin-right: 3px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 .profile-container img {
   border-radius: 50%;

@@ -2,25 +2,44 @@
 @import "../../utils/variables";
 
 .note-container {
+  position: relative;
   color: $Font-PrimaryColor;
-  display: flex;
-  align-items: center;
   background-color: #060c108e;
   width: 97%;
-  padding: 2.5vh 2vh;
-  margin-left: 2vh;
+  padding: 2.3vh 2vh;
+  margin-left: 3.5vh;
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
-  margin-bottom: 1vh;
+  margin-bottom: 0.5vh;
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(5px);
+
   i,
   span {
-    font-size: 1.2em;
+    font-size: 1em;
     display: flex;
     align-self: center;
   }
+  i:hover {
+    color: red;
+  }
+  // i:hover::before {
+  //   content: "✓";
+  //   color: #e2e2e2;
+  //   position: absolute;
+  //   left: 14px;
+  //   font-size: 0.6em;
+  //   font-weight: 500;
+  // }
+  // @media screen and (max-width: 800px) {
+  //   i:hover::before {
+  //     left: 20px;
+  //   }
+  // }
   span {
     display: flex;
     align-items: center;
@@ -33,6 +52,7 @@
     padding-left: 1vw;
     color: #dfdddd;
     width: 100%;
+    font-size: 0.8em;
   }
 }
 .note-container:hover {

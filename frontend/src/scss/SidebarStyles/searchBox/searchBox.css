@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap");
 .search-notes-input {
   margin-top: 3vh;
   color: #fff;
-  flex-direction: row;
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -22,6 +23,9 @@
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+}
+.search-notes-input input:focus {
+  border-bottom: 1px solid #ffbd43;
 }
 .search-notes-input input::-moz-placeholder {
   color: #ccc;
